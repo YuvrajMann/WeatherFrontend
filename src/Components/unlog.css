@@ -1,0 +1,48 @@
+.login_wrapper{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y:hidden;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.signup_wrapper{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.signup_wrapper h3{
+    margin-bottom: 40px;
+    font-size: 30px;
+}
+.signup_wrapper form{
+    height: 300px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+.login_wrapper h3{
+    margin-bottom: 40px;
+    font-size: 30px;
+}
+.login_wrapper form{
+    height: 200px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 40px;
+   
+}
+.login_wrapper button{
+    width: 100%;
+}
+.signup_wrapper button{
+    width: 100%;
+}

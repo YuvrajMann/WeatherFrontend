@@ -1,0 +1,125 @@
+:root{
+    --high:#ff758f;
+    --moderate:#dddf00;
+    --low:#9ef01a;
+}
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(128, 128, 128, 0.192);
+    align-items: center;
+    align-content: center;
+    margin-bottom: 20px;
+    height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow-x: hidden;
+}
+.header div:nth-child(1){
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.content{
+    overflow-x: hidden;
+}
+.content h3{
+    text-align: center;
+}
+.content form{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    overflow-x: hidden;
+}
+.content .form-group{
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.weather_data_wrapper{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.weather_card_wrapper{
+    width: 400px;
+    text-align: center;
+    padding:40px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.11);
+   
+}
+.loc_name{
+    font-size: 20px;
+    font-weight: 600;
+}
+.temp{
+    font-size: 28px;
+    font-weight: 600;
+}
+.remarks{
+    font-weight: 600;
+}
+.alert_create_wrapper{
+  
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+}
+
+.alert_create_wrapper h3{
+    text-align: center;
+    font-size: 1.6rem;
+}
+.alert_create_wrapper .form-group{
+   
+    padding:10px;
+}
+.alert_wrapper>div:nth-child(1){
+    padding:10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.alert_card_wrapper{
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.11);
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    font-size: 1.02rem;
+}
+.alert_card_wrapper.moderate{
+    background-color: var(--moderate);
+}
+.alert_card_wrapper.low{
+    background-color: var(--low);
+}
+.alert_card_wrapper.Low{
+    background-color: var(--low);
+}
+.alert_card_wrapper.high{
+    background-color: var(--high);
+}
+.alert_card_wrapper .message{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.767);
+}
+.alert_card_wrapper .loc{
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.767);
+}
+.weather_data_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
