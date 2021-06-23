@@ -108,6 +108,9 @@ export default class login extends Component {
               <u>SignUp</u>
             </Link>
           </div>
+          <div className="login_footer">
+            Weather Alerter - Created By : Yuvraj Mann
+          </div>
         </div>
       </>
     );

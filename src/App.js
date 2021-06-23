@@ -7,6 +7,8 @@ import CreateAlert from './Components/createAlert';
 import AllAlerts from './Components/AllAlerts';
 import MainDashboard from './Components/MainDashBoard';
 import { axiosInstance } from "./axiosInterceptor";
+import { Button, Input, Form, Label, FormGroup, Col } from "reactstrap";
+import {Link} from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
@@ -42,6 +44,38 @@ class App extends Component {
       return (
       <Router>
        { this.state.loggedIn ? (
+         <>
+          <div className="header">
+          <div>Weather Alerter</div>
+          <div>
+          <Link to="/">
+            <Button
+              color="danger"
+              style={{ marginRight: "20px" }}
+            >
+              Home
+            </Button>
+            </Link>
+            <Link to="/createAlert">
+            <Button
+              color="danger"
+              style={{ marginRight: "20px"}}
+            >
+              Create Alert
+            </Button>
+            </Link>
+            <Link to="/alerts">
+            <Button
+              color="danger"
+              style={{ marginRight: "20px" }}
+            >
+              Alerts
+            </Button>
+            </Link>
+          
+            <Button color="primary" onClick={()=>{this.toogelLoggedIn(); delete localStorage.token}}>LogOut</Button>
+          </div>
+        </div>
          <Switch>
            <Route path="/" exact history={this.props.history} render={(props)=>(
                 <MainDashboard  history={props.history} toogelLoggedIn={this.toogelLoggedIn}></MainDashboard>
@@ -53,6 +87,7 @@ class App extends Component {
               <AllAlerts history={props.history}></AllAlerts> 
            )}></Route>
          </Switch>
+         </>
        
       ) : (
         <Switch>

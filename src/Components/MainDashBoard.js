@@ -1,12 +1,15 @@
 import { message } from "antd";
 import React, { Component } from "react";
-import { Button, Input, Form, Label, FormGroup, Col } from "reactstrap";
+import { Button, Input, Form, Label, FormGroup, Col ,Container,Row} from "reactstrap";
 import { Spinner } from "react-bootstrap";
 import "./log.css";
 import { axiosInstance } from "../axiosInterceptor";
 import WeatherCard from './weather';
 import {Link} from 'react-router-dom';
 import ChartComponent from './chartComponent';
+import weatherTable from './weatherTable';
+import WeatherTable from "./weatherTable";
+
 export default class MainDashBoard extends Component {
   constructor(props) {
     super(props);
@@ -88,29 +91,7 @@ export default class MainDashBoard extends Component {
   render() {
     return (
       <div>
-        <div className="header">
-          <div>Weather Alerter</div>
-          <div>
-            <Link to="/createAlert">
-            <Button
-              color="danger"
-              style={{ marginRight: "20px"}}
-            >
-              Create Alert
-            </Button>
-            </Link>
-            <Link to="/alerts">
-            <Button
-              color="danger"
-              style={{ marginRight: "20px" }}
-            >
-              Alerts
-            </Button>
-            </Link>
-          
-            <Button color="primary" onClick={()=>{this.props.toogelLoggedIn(); delete localStorage.token}}>LogOut</Button>
-          </div>
-        </div>
+       
         <div className="content">
           <h3>Get Weather</h3>
           <Form onSubmit={(e)=>{e.preventDefault();this.fetchWeather()}}>
@@ -161,8 +142,13 @@ export default class MainDashBoard extends Component {
           </Form>
         </div>
         <div className="weather_data_wrapper">
-          {this.state.loading?(<Spinner animation="border" variant="dark" />):((this.state.weatherData)?(<><WeatherCard weatherData={this.state.weatherData}></WeatherCard>
-          <ChartComponent chartData={this.state.chartData}></ChartComponent></>):(<></>))}
+          {this.state.loading?(<Spinner animation="border" variant="dark" />):((this.state.weatherData)?(<Container className="analysis_wrapper">
+          <Row>
+              <Col md={12} sm={12} style={{justifyContent:'center',display:'flex',marginBottom:'30px'}}><WeatherCard weatherData={this.state.weatherData}></WeatherCard></Col>
+              <Col md={6} sm={12}> <ChartComponent chartData={this.state.chartData}></ChartComponent></Col>
+              <Col md={6} sm={12}><WeatherTable chartData={this.state.chartData}></WeatherTable></Col>
+          </Row>
+          </Container>):(<></>))}
         </div>
       
       </div>
